@@ -2,6 +2,8 @@ package com.restaurant.api.controller;
 
 import com.restaurant.api.dto.login.LoginReqDto;
 import com.restaurant.api.dto.login.LogoutReqDto;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
  * user : jwlee
  * date : 2023/01/16
  */
+@Api(tags = {"로그인"})
+@ApiOperation(value = "login test")
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
