@@ -11,12 +11,16 @@ import lombok.ToString;
  * user : jwlee
  * date : 2023/01/16
  */
-@NoArgsConstructor
 @Getter
 @ToString
+@NoArgsConstructor
 public class LoginReqDto {
 
     private String id;
     private String password;
-
+    @Builder
+    public LoginReqDto(String id, String password) {
+        this.id = id;
+        this.password = password;
+    }
 }
