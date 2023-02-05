@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import static javax.persistence.GenerationType.IDENTITY;
 
 /**
  * packageName : com.restaurant.api.domain.auth
@@ -18,7 +19,7 @@ import javax.persistence.*;
 public class Auth {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = IDENTITY)
     private Long id;
 
     @Column(nullable = false)
