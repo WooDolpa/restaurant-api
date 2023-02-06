@@ -1,5 +1,7 @@
 package com.restaurant.api.service;
 
+import com.restaurant.api.domain.auth.AuthRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 /**
@@ -9,5 +11,9 @@ import org.springframework.stereotype.Service;
  * date : 2023/01/28
  */
 @Service
+@RequiredArgsConstructor
 public class AuthService {
+
+    private final AuthRepository authRepository;
+
 }
