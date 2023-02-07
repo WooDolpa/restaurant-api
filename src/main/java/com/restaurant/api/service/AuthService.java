@@ -16,4 +16,7 @@ public class AuthService {
 
     private final AuthRepository authRepository;
 
+    public void insert(){}
+    public void update(){}
+    public void delete(){}
 }
