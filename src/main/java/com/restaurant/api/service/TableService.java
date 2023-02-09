@@ -15,4 +15,8 @@ import org.springframework.stereotype.Service;
 public class TableService {
 
     private final TableRepository tableRepository;
+
+    public void insert(){}
+    public void update(){}
+    public void delete(){}
 }
