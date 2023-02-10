@@ -15,4 +15,8 @@ import org.springframework.stereotype.Service;
 public class StoreService {
 
     private final StoreRepository storeRepository;
+
+    public void insert(){}
+    public void update(){}
+    public void delete(){}
 }
