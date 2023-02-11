@@ -16,7 +16,10 @@ public class StoreService {
 
     private final StoreRepository storeRepository;
 
-    public void insert(){}
+    public void insert(){
+
+        storeRepository.save(null);
+    }
     public void update(){}
     public void delete(){}
 }
