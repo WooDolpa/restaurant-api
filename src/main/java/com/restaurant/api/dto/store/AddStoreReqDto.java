@@ -1,5 +1,6 @@
 package com.restaurant.api.dto.store;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,16 +18,6 @@ import lombok.ToString;
 public class AddStoreReqDto {
 
     private long userId;
-    private String name;
-    private String dataStatus;
+    private String storeName;
 
-    public AddStoreReqDto() {
-        this.dataStatus = "1";
-    }
-    @Builder
-    public AddStoreReqDto(long userId, String name, String dataStatus) {
-        this.userId = userId;
-        this.name = name;
-        this.dataStatus = dataStatus;
-    }
 }

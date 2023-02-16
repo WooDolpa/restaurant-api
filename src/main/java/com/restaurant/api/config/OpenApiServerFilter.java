@@ -25,7 +25,7 @@ public class OpenApiServerFilter implements WebMvcOpenApiTransformationFilter {
 
         OpenAPI openAPI = context.getSpecification();
 
-        Server localServer = createServer("http://localhost:8080", "로컱 테스트");
+        Server localServer = createServer("http://localhost:8080", "로컬 테스트");
         Server testServer = createServer( "http://127.0.0.1:8080", "테스트 서버");
         openAPI.setServers(Arrays.asList(localServer, testServer));
         return openAPI;

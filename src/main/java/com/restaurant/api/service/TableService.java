@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class TableService {
 
-    private final TableRepository tableRepository;
 
     public void insert(){}
     public void update(){}
