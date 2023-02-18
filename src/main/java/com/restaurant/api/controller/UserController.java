@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Tag(name = "User")
-    @ApiOperation(value = "사용자 등록", notes = "테스트입니다.<br>이렇게하면 줄바꿈이 되는가?")
+//    @ApiOperation(value = "사용자 등록", notes = "테스트입니다.<br>이렇게하면 줄바꿈이 되는가?")
     @PostMapping("/add")
     public ResponseEntity userAdd(@RequestBody UserReqDto dto){
         return ResponseEntity.ok().body("ok");
