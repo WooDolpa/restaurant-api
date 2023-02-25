@@ -2,8 +2,11 @@ package com.restaurant.api.controller;
 
 import com.restaurant.api.dto.store.AddStoreReqDto;
 import com.restaurant.api.dto.store.UpdateStoreReqDto;
+import com.restaurant.api.service.StoreService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,15 +17,19 @@ import org.springframework.web.bind.annotation.*;
  * user : jwlee
  * date : 2023/01/16
  */
-@Api(tags = {"상점"})
+@Tag(name = "Store", description = "가게")
 @RestController
 @RequestMapping("/store")
+@RequiredArgsConstructor
 public class StoreController {
 
+    private final StoreService storeService;
 
+    @Tag(name = "Store")
+    @ApiOperation(value = "상점 등록 API", notes = "가게 등록입니다.")
     @PostMapping("/add")
-    @ApiOperation(value = "상점 등록")
     public ResponseEntity<AddStoreReqDto> addStore(@RequestBody AddStoreReqDto addStoreReqDto){
+        storeService.insert(addStoreReqDto);
         return ResponseEntity.status(HttpStatus.OK).body(addStoreReqDto);
     }
 

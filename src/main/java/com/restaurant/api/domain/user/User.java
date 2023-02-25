@@ -1,7 +1,6 @@
-package com.restaurant.api.domain.store;
+package com.restaurant.api.domain.user;
 
 import com.restaurant.api.domain.BaseEntity;
-import com.restaurant.api.domain.user.User;
 import com.restaurant.api.enums.UseYN;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,33 +12,34 @@ import static javax.persistence.EnumType.STRING;
 import static javax.persistence.GenerationType.IDENTITY;
 
 /**
- * packageName : com.restaurant.api.domain.store
- * className : Store
+ * packageName : com.restaurant.api.domain.user
+ * className : User
  * user : jwlee
- * date : 2023/02/05
+ * date : 2023/02/25
+ * description :
  */
 @Getter
 @NoArgsConstructor
 @Entity
-public class Store extends BaseEntity {
+public class User extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
+    @Column(length = 20)
     private Long id;
-    @Column(name = "store_name", nullable = false, length = 20)
-    private String storeName;
+
+    @Column(nullable = false, length = 20)
+    private String password;
+
     @Enumerated(STRING)
     @Column(nullable = false)
     private UseYN useYn;
 
-    @ManyToOne
-    @JoinColumn(name = "id")
-    private User user;
-
     @Builder
-    public Store(String storeName, User user) {
-        this.storeName = storeName;
-        this.user = user;
+    public User(String password) {
+        this.password = password;
         this.useYn = UseYN.YES;
     }
+
+
 }
