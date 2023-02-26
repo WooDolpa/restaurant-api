@@ -32,10 +32,11 @@ public class UserService {
     @Transactional
     public Long insert(UserReqDto userReqDto) {
         User user = User.builder()
+                .userId(userReqDto.getId())
                 .password(userReqDto.getPassword())
                 .build();
 
-        Long id = userRepository.save(user).getId();
-        return id;
+        Long userNo = userRepository.save(user).getUserNo();
+        return userNo;
     }
 }

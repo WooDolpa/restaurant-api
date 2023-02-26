@@ -25,7 +25,7 @@ public class Store extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    private Long id;
+    private Long storeId;
     @Column(name = "store_name", nullable = false, length = 20)
     private String storeName;
     @Enumerated(STRING)
@@ -33,7 +33,7 @@ public class Store extends BaseEntity {
     private UseYN useYn;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "userNo")
     private User user;
 
     @Builder
@@ -42,4 +42,5 @@ public class Store extends BaseEntity {
         this.user = user;
         this.useYn = UseYN.YES;
     }
+
 }

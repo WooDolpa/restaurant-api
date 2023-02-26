@@ -3,8 +3,9 @@ package com.restaurant.api.dto.user;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+import javax.persistence.Column;
 
 /**
  * packageName : com.restaurant.api.dto.user
@@ -19,8 +20,10 @@ import lombok.ToString;
 public class UserReqDto {
 
     @ApiModelProperty(notes = "사용하고자 하는 ID <br> 20자리까지 가능합니다.", example = "jwlee", required = true)
+    @Column(length = 20)
     private String id;
-    @ApiModelProperty(value = "비밀번호", required = true)
+    @ApiModelProperty(notes = "사용하고자 하는 비밀번호 <br> 20자리까지 가능합니다.", example = "1234", required = true)
+    @Column(length = 20)
     private String password;
 
 }

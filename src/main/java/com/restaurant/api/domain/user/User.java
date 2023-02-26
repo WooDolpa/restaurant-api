@@ -20,13 +20,17 @@ import static javax.persistence.GenerationType.IDENTITY;
  */
 @Getter
 @NoArgsConstructor
+@Table(name = "users")
 @Entity
 public class User extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @Column(length = 20)
-    private Long id;
+    private Long userNo;
+
+    @Column(nullable = false, length = 20)
+    private String userId;
 
     @Column(nullable = false, length = 20)
     private String password;
@@ -36,7 +40,8 @@ public class User extends BaseEntity {
     private UseYN useYn;
 
     @Builder
-    public User(String password) {
+    public User(String userId, String password) {
+        this.userId = userId;
         this.password = password;
         this.useYn = UseYN.YES;
     }
