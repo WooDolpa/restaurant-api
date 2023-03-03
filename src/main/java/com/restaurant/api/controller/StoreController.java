@@ -26,7 +26,7 @@ public class StoreController {
     private final StoreService storeService;
 
     @Tag(name = "Store")
-//    @ApiOperation(value = "가게 등록", notes = "가게 등록입니다.")
+    @ApiOperation(value = "가게 등록", notes = "가게 등록입니다.")
     @PostMapping("/add")
     public ResponseEntity<AddStoreReqDto> addStore(@RequestBody AddStoreReqDto addStoreReqDto){
         storeService.insert(addStoreReqDto);
