@@ -34,10 +34,10 @@ public class StoreController {
     }
 
     // 조회
-    @GetMapping("/get/{store_id}")
-    public Integer getStore(@PathVariable(name = "store_id") Integer storeId){
-        return storeId;
-    }
+//     @GetMapping("/get/{store_id}")
+//     public Integer getStore(@PathVariable(name = "store_id") Integer storeId){
+//         return storeId;
+//     }
 
     // 수정
     @PutMapping("/update")
